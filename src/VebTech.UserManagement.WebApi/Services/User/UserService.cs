@@ -87,16 +87,16 @@ public class UserService : IUserService
 
     public async Task UpdateAsync(UserRequest model, int id)
     {
-        var userExist = await _context.Users.AnyAsync(u => u.Id == id);
-        if (!userExist)
+        var userExists = await _context.Users.AnyAsync(u => u.Id == id);
+        if (!userExists)
         {
             throw new HttpException(StatusCodes.Status404NotFound, $"User with id:{id} not found.");
         }
 
-        var emailExist = await _context.Users.AnyAsync(u => u.Email == model.Email && u.Id != id);
-        if (emailExist)
+        var emailExists = await _context.Users.AnyAsync(u => u.Email == model.Email && u.Id != id);
+        if (emailExists)
         {
-            throw new HttpException(StatusCodes.Status404NotFound, $"User with email:{model.Email} already exist.");
+            throw new HttpException(StatusCodes.Status404NotFound, $"User with email:{model.Email} already exists.");
         }
 
         var user = _mapper.Map<User>(model);
