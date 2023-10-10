@@ -87,20 +87,23 @@ public class UserService : IUserService
 
     public async Task UpdateAsync(UserRequest model, int id)
     {
-        var userExists = await _context.Users.AnyAsync(u => u.Id == id);
-        if (!userExists)
+        if (model.Id != id)
+        {
+            throw new HttpException(StatusCodes.Status400BadRequest, $"IDs don't match.");
+        }
+
+        if (!UserExists(id))
         {
             throw new HttpException(StatusCodes.Status404NotFound, $"User with id:{id} not found.");
         }
 
-        var emailExists = await _context.Users.AnyAsync(u => u.Email == model.Email && u.Id != id);
+        var emailExists = _context.Users.Any(u => u.Email == model.Email && u.Id != id);
         if (emailExists)
         {
-            throw new HttpException(StatusCodes.Status404NotFound, $"User with email:{model.Email} already exists.");
+            throw new HttpException(StatusCodes.Status500InternalServerError, $"User with email:{model.Email} already exists.");
         }
 
         var user = _mapper.Map<User>(model);
-        user.Id = id;
 
         _context.Entry(user).State = EntityState.Modified;
 
@@ -116,12 +119,17 @@ public class UserService : IUserService
 
     public async Task<User> CreateAsync(UserRequest model)
     {
-        var user = _mapper.Map<User>(model);
+        if (UserExists(model.Id))
+        {
+            throw new HttpException(StatusCodes.Status500InternalServerError, "User with this id already exists.");
+        }
 
-        if (EmailExists(user.Email))
+        if (EmailExists(model.Email))
         {
             throw new HttpException(StatusCodes.Status500InternalServerError, "User with this email already exists.");
         }
+
+        var user = _mapper.Map<User>(model);
 
         var userRole = await _context.Roles.FindAsync(Constants.UserRoleId);
         user.Roles = new List<Role>() { userRole };
@@ -184,5 +192,10 @@ public class UserService : IUserService
     private bool EmailExists(string email)
     {
         return (_context.Users?.Any(e => e.Email == email)).GetValueOrDefault();
+    }
+
+    private bool UserExists(int id)
+    {
+        return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 [Index(nameof(Email), IsUnique = true)]
 public class UserRequest
 {
+    public int Id { get; set; }
+
     [Required]
     public string Name { get; set; }
 
