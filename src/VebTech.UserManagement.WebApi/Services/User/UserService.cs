@@ -89,7 +89,7 @@ public class UserService : IUserService
     {
         if (model.Id != id)
         {
-            throw new HttpException(StatusCodes.Status400BadRequest, $"IDs don't match.");
+            throw new HttpException(StatusCodes.Status400BadRequest, "IDs don't match.");
         }
 
         if (!UserExists(id))
@@ -154,7 +154,7 @@ public class UserService : IUserService
 
         if (user.Roles.Contains(role))
         {
-            throw new HttpException(StatusCodes.Status500InternalServerError, "This Role already exists for the User");
+            throw new HttpException(StatusCodes.Status500InternalServerError, "This Role already exists for the User.");
         }
 
         user.Roles.Add(role);
