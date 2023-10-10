@@ -1,6 +1,7 @@
 namespace VebTech.UserManagement.WebApi.Helpers;
 
-using Models;
+using EntityFramework.Entities;
+using WebApi.Models;
 
 using AutoMapper;
 

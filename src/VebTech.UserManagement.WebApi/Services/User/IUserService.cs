@@ -1,7 +1,8 @@
 ﻿namespace VebTech.UserManagement.WebApi.Services.User;
 
-using Filters;
-using Models;
+using WebApi.Filters;
+using WebApi.Models;
+using EntityFramework.Entities;
 
 public interface IUserService
 {

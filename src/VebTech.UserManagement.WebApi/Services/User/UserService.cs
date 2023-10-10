@@ -1,8 +1,10 @@
 ﻿namespace VebTech.UserManagement.WebApi.Services.User;
 
-using Filters;
-using Helpers;
-using Models;
+using WebApi.Filters;
+using WebApi.Helpers;
+using WebApi.Models;
+using EntityFramework.Helpers;
+using EntityFramework.Entities;
 
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;

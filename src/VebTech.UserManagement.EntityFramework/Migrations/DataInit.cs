@@ -1,7 +1,7 @@
-﻿namespace VebTech.UserManagement.WebApi.Migrations;
+﻿namespace VebTech.UserManagement.EntityFramework.Migrations;
 
 using Helpers;
-using Models;
+using Entities;
 
 public static class DataInit
 {

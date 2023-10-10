@@ -1,9 +1,9 @@
 ﻿namespace VebTech.UserManagement.WebApi;
 
-using Helpers;
-using Migrations;
-using Services.User;
-using Services.Auth;
+using EntityFramework.Helpers;
+using EntityFramework.Migrations;
+using WebApi.Services.User;
+using WebApi.Services.Auth;
 
 using System.Text;
 using System.Reflection;
@@ -24,7 +24,6 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContext<DataContext>();
         services.AddEndpointsApiExplorer();
         services.AddControllers().ConfigureApiBehaviorOptions(x => { x.SuppressMapClientErrors = true; });
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -67,6 +66,8 @@ public class Startup
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:SecretKey"]))
             };
         });
+
+        services.AddUserManagementEntityFramework();
 
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IUserService, UserService>();

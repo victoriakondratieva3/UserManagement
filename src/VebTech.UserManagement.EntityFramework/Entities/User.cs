@@ -1,4 +1,4 @@
-﻿namespace VebTech.UserManagement.WebApi.Models;
+﻿namespace VebTech.UserManagement.EntityFramework.Entities;
 
 public class User
 {

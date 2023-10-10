@@ -1,9 +1,10 @@
 ﻿namespace VebTech.UserManagement.WebApi.Controllers;
 
-using Filters;
-using Models;
-using Helpers;
-using Services.User;
+using WebApi.Models;
+using WebApi.Helpers;
+using WebApi.Filters;
+using WebApi.Services.User;
+using EntityFramework.Entities;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;

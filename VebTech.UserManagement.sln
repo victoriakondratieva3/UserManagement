@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{92C87A4E-151
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VebTech.UserManagement.WebApi", "src\VebTech.UserManagement.WebApi\VebTech.UserManagement.WebApi.csproj", "{12EEB381-A6CD-40E9-8048-2975697E8466}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VebTech.UserManagement.EntityFramework", "src\VebTech.UserManagement.EntityFramework\VebTech.UserManagement.EntityFramework.csproj", "{DDA98FED-4961-4495-B994-A23B021B182A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{12EEB381-A6CD-40E9-8048-2975697E8466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12EEB381-A6CD-40E9-8048-2975697E8466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12EEB381-A6CD-40E9-8048-2975697E8466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA98FED-4961-4495-B994-A23B021B182A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA98FED-4961-4495-B994-A23B021B182A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA98FED-4961-4495-B994-A23B021B182A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA98FED-4961-4495-B994-A23B021B182A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{12EEB381-A6CD-40E9-8048-2975697E8466} = {92C87A4E-1511-4C95-B436-A447091A03C0}
+		{DDA98FED-4961-4495-B994-A23B021B182A} = {92C87A4E-1511-4C95-B436-A447091A03C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4642AAA6-90E7-4E1D-BF49-A11E77504A11}

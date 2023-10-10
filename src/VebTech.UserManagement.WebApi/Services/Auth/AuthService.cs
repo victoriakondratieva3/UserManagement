@@ -1,6 +1,6 @@
 ﻿namespace VebTech.UserManagement.WebApi.Services.Auth;
 
-using Models;
+using WebApi.Models;
 
 using System.Text;
 using System.Security.Claims;

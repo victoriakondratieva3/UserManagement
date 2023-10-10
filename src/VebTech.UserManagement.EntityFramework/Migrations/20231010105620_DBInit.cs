@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace VebTech.UserManagement.WebApi.Migrations
+namespace VebTech.UserManagement.EntityFramework.Migrations
 {
     /// <inheritdoc />
     public partial class DBInit : Migration

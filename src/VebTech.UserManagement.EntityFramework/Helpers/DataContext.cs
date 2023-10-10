@@ -1,8 +1,9 @@
-﻿namespace VebTech.UserManagement.WebApi.Helpers;
+﻿namespace VebTech.UserManagement.EntityFramework.Helpers;
 
-using Models;
+using Entities;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 public class DataContext : DbContext
 {
@@ -12,6 +13,7 @@ public class DataContext : DbContext
     {
         Configuration = configuration;
 
+        //Comment if necessary use migrations
         Database.EnsureCreated();
     }
 
