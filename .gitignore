@@ -396,5 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-/src/api/VebTech.UserManagement.WebApi/log.txt
 /src/VebTech.UserManagement.WebApi/log.txt
